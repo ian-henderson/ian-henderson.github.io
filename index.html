@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Ian Henderson</title>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Ian Henderson">
+    <meta name="description" content="Personal Site">
+    <meta name="keywords"
+        content="Ian Henderson, Ian, Henderson, Frontend, Frontend Engineer, Fullstack, Fullstack Engineer, Developer, Software Developer, Programmer, Software, Software Engineer, HTML, CSS, CSS3, JavaScript, TypeScript, React, Python, Flask, PostgreSQL, Mentor, Mentorship">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="./assets/favicon-16.svg" rel="icon" sizes="16x16">
+    <link href="./assets/favicon-32.svg" rel="icon" sizes="32x32">
+    <link href="./assets/favicon-96.svg" rel="icon" sizes="96x96">
+    <link href="./assets/favicon-120.svg" rel="icon" sizes="120x120">
+
+    <script defer data-domain="ian-henderson.github.io" src="https://plausible.io/js/script.js"></script>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?family=Source Sans Pro:ital,wght@0,400;0,700;1,400&family=Alegreya:wght@700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source Sans Pro:ital,wght@0,400;0,700;1,400&family=Alegreya:wght@700&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <style type="text/css">
+        :root {
+            --base03: #002b36;
+            --base02: #073642;
+            --base01: #586e75;
+            --base00: #657b83;
+            --base0: #839496;
+            --base1: #93a1a1;
+            --base2: #eee8d5;
+            --base3: #fdf6e3;
+            --blue: #268bd2;
+            --cyan: #2aa198;
+            --green: #859900;
+            --magneta: #d33682;
+            --orange: #cb4b16;
+            --violet: #6c71c4;
+            --red: #dc322f;
+            --yellow: #b58900;
+
+            --background-color-light: var(--base3);
+            --background-color-wrapper-light: var(--base2);
+            --color-light: var(--base00);
+            --display-color-light: var(--base01);
+            --link-color-light: var(--cyan);
+
+            --background-color-dark: var(--base03);
+            --background-color-wrapper-dark: var(--base02);
+            --color-dark: var(--base0);
+            --display-color-dark: var(--base1);
+            --link-color-dark: var(--cyan);
+
+            --h1-font-size: 2.488rem;
+            --h1-font-size-mobile: 1.802rem;
+            --h2-font-size: 2.074rem;
+            --h2-font-size-mobile: 1.602rem;
+            --h3-font-size: 1.728rem;
+            --h3-font-size-mobile: 1.424rem;
+            --h3-font-size: 1.44rem;
+            --h3-font-size-mobile: 1.266rem;
+
+            --font-display: 'Alegreya', sans-serif;
+            --font-text: 'Source Sans Pro', sans-serif;
+        }
+
+        html {
+            font-family: var(--font-text);
+            font-weight: 400;
+            text-rendering: geometricPrecision;
+            min-height: 100vh;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        main {
+            min-height: 100vh;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        h1 {
+            font-size: var(--h1-font-size-mobile);
+        }
+
+        h2 {
+            font-size: var(--h2-font-size-mobile);
+        }
+
+        h3 {
+            font-size: var(--h3-font-size-mobile);
+        }
+
+        h3 {
+            font-size: var(--h3-font-size-mobile);
+        }
+
+        li {
+            line-height: 1.2;
+            margin: 0.25rem auto;
+        }
+
+        .icon {
+            margin-right: 0.5rem;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page-content-wrapper {
+            padding-top: 2rem;
+            padding-bottom: 10rem;
+        }
+
+        .page-content {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        #title {
+            margin-bottom: 2rem;
+            text-align: right;
+        }
+
+        /* small devices */
+        @media only screen and (min-width: 600px) {
+            .page-content-wrapper {
+                width: 600px;
+            }
+        }
+
+        /* medium devices */
+        @media only screen and (min-width: 768px) {
+            h1 {
+                font-size: var(--h1-font-size);
+            }
+
+            h2 {
+                font-size: var(--h2-font-size);
+            }
+
+            h3 {
+                font-size: var(--h3-font-size);
+            }
+
+            h3 {
+                font-size: var(--h3-font-size);
+            }
+
+            .page-content-wrapper {
+                width: 768px;
+                padding-top: 3rem;
+            }
+
+            .page-content {
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+        }
+
+        /* large devices */
+        @media only screen and (min-width: 992px) {
+            .page-content-wrapper {
+                width: 992px;
+                padding-top: 4rem;
+            }
+
+            .page-content {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+
+            #personal-info-and-education {
+                display: flex;
+                flex-direction: row;
+            }
+
+            #personal-info-and-education section {
+                flex: 1;
+            }
+
+            #work-experience {
+                margin-top: 3rem;
+            }
+        }
+
+        /* light color scheme */
+        @media (prefers-color-scheme: light) {
+            html {
+                background: linear-gradient(90deg, var(--background-color-light), var(--background-color-wrapper-light), var(--background-color-light));
+                color: var(--color-light);
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: var(--display-color-light);
+            }
+
+            a {
+                color: var(--link-color-light);
+            }
+
+            .page-content-wrapper {
+                background-color: var(--background-color-light);
+            }
+        }
+
+        /* dark color scheme */
+        @media (prefers-color-scheme: dark) {
+            html {
+                background: linear-gradient(90deg, var(--background-color-dark), var(--background-color-wrapper-dark), var(--background-color-dark));
+                color: var(--color-dark);
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: var(--display-color-dark);
+            }
+
+            a {
+                color: var(--link-color-dark);
+            }
+
+            .page-content-wrapper {
+                background-color: var(--background-color-dark);
+            }
+        }
+
+    </style>
+
+    <script>
+        // Sets the background to a random color
+        const html = document.getElementsByTagName('html')[0];
+        const colors = ["blue", "cyan", "green", "magneta", "orange", "red", "violet", "yellow"];
+
+        function randomizeBackgroundColor() {
+            html.style.backgroundColor = `var(--${colors[Math.floor(Math.random() * (colors.length - 1))]})`;
+        }
+
+        randomizeBackgroundColor();
+
+        // Sets the background to a random color every time you scroll to top or bottom of page
+        window.addEventListener('scroll', () => {
+            const atTopOfPage = window.scrollY === 0;
+            const atBottomOfPage = (window.innerHeight + window.scrollY) === document.body.offsetHeight;
+
+            if (atTopOfPage || atBottomOfPage) randomizeBackgroundColor();
+        })
+    </script>
+</head>
+
+<body>
+    <main>
+        <div class="page-wrapper">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <section id="title">
+                        <a href="./assets/resume.pdf" target="_blank">
+                            Download
+                        </a>
+                        <header>
+                            <h1>Ian Henderson</h1>
+                            <p>Fullstack Software Engineer</p>
+                        </header>
+                    </section>
+
+                    <section>
+                        <h2>Summary Statement</h2>
+                        <p>
+                            Fullstack Software Engineer with a bachelor's of science in computer science and six years of
+                            industry experience working with modern fullstack and frontend technologies.
+                        </p>
+                    </section>
+
+                    <div id="personal-info-and-education">
+                        <section>
+                            <h2>Personal Information</h2>
+                            <p><span class="icon">📫</span><a href="mailto:ianhenderson@pm.me"
+                                    target="_blank">ianhenderson@pm.me</a></p>
+                            <p><span class="icon">💻</span><a href="https://ian-henderson.github.io"
+                                    target="_blank">ian-henderson.github.io</a></p>
+                            <p><span class="icon">👾</span><a href="https://github.com/ian-henderson"
+                                    target="_blank">github.com/ian-henderson</a></p>
+                            <p><span class="icon">📍</span><a href="https://google.com/maps/place/Colorado+Springs,+CO"
+                                    target="_blank">Colorado Springs, Colorado</a></p>
+                        </section>
+
+                        <section>
+                            <h2>Education</h2>
+                            <p><b>Bachelor of Science (B.S.) in Computer Science</b></p>
+                            <p>University of North Texas, Denton, TX</p>
+                            <p><i>2012-2016</i></p>
+                        </section>
+                    </div>
+
+                    <section>
+                        <h2>Skills</h2>
+                        <p>
+                            <b>Expert (★★★★★)</b>:
+                            JavaScript, TypeScript, React, Redux, HTML5, CSS3,
+                            Node.js
+                        </p>
+                        <p>
+                            <b>Advanced (★★★★☆)</b>:
+                            GraphQL, React Native, Webpack, Next.js,
+                            Object Oriented Programming, Python, Django,
+                            Django Rest Framework, PostgreSQL, SQL, Git,
+                            GitHub, GitLab, BitBucket, SASS
+                        </p>
+                        <p>
+                            <b>Familiar (★★★☆☆)</b>:
+                            Docker, Puppeteer, MongoDB, Angular, Vue, Three.js
+                        </p>
+                    </section>
+
+                    <section id="work-experience">
+                        <h2>Work Experience</h2>
+                        <div>
+                            <h3>
+                                Fullstack Software Engineer, Signature Consultants
+                            </h3>
+                            <p>Remote</p>
+                            <p><i>September 2021 - October 2022</i></p>
+                            <h4>Freespoke Contract</h4>
+                            <ul>
+                                <li>Freespoke is an alternative search engine company</li>
+                                <li>Stack: TypeScript, React, SASS, Netlify, Ant Design</li>
+                                <li>Built legal document pages and styles</li>
+                                <li>Built new site-level menu screen</li>
+                                <li>Built home page menu button with animation</li>
+                                <li>Built home page side bar</li>
+                                <li>Fixed various UI bugs related to search</li>
+                                <li>Integrated significant parts of the home screen into analytics</li>
+                            </ul>
+                            <h4>Optum Contract</h4>
+                            <ul>
+                                <li>United Health Group Company</li>
+                                <li>
+                                    Stack: React, Next.js, GraphQL, Node
+                                    services
+                                </li>
+                                <li>
+                                    Shipped and maintained features for
+                                    Next.js React app
+                                </li>
+                                <li>
+                                    Created React wrapper to host another
+                                    team's injected JavaScript app
+                                </li>
+                                <li>
+                                    Mentored junior engineer
+                                </li>
+                            </ul>
+                            <h4>Bank of America Contract</h4>
+                            <ul>
+                                <li>
+                                    Led a project to develop 3CS, a tool to
+                                    notify internal application users when an
+                                    app will be unavailable - 3CS was
+                                    prematurely canceled due to political
+                                    forces within the company
+                                </li>
+                                <li>
+                                    Created a React UI for 3CS with
+                                    accompanying documention.
+                                </li>
+                                <li>
+                                    Owned (adopted) DeltaApp, another React
+                                    app for tracking internal applications
+                                </li>
+                                <li>
+                                    Converted DeltaApp to TypeScript,
+                                    integrated Prettier and ESLint dev tools
+                                </li>
+                                <li>
+                                    Added batch cell editing functionality to
+                                    an existing table component
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Time off to recover from covid-related health issues</h3>
+                            <p><i>September 2020 - September 2021</i></p>
+                        </div>
+                        <div>
+                            <h3>Frontend Software Engineer, SAVI Controls</h3>
+                            <p>Carrollton, Texas</p>
+                            <p><i>May 2019 - September 2020</i></p>
+                            <ul>
+                                <li>
+                                    SAVI sells software and hardware systems to
+                                    manage video, audio, and lighting in
+                                    entertainment venues, including Top Golf
+                                </li>
+                                <li>
+                                    Created a React-Redux inventory management web
+                                    app with TypeScript and Redux-Saga.
+                                    <ul>
+                                        <li>
+                                            Highlights: info-dense tables, sharable
+                                            links (state-preserved in url params),
+                                            redux pagination
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Created an accompanying React Native inventory
+                                    management app for internal use.
+                                    <ul>
+                                        <li>
+                                            Highlights: bulk product importing,
+                                            product QR code scanning, redux
+                                            pagination
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Maintained legacy Meteor.js code base</li>
+                                <li>
+                                    Created React UI for a network-based game
+                                    console streaming system within legacy
+                                    Meteor.js code base for GameStop
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Fullstack Software Engineer, IBM (Contract)</h3>
+                            <p>Addison, Texas</p>
+                            <p><i>September 2018 - May 2019</i></p>
+                            <ul>
+                                <li>
+                                    Worked with a team to build a website to
+                                    manage SoftLayer bare-metal and virtual servers
+                                </li>
+                                <li>
+                                    Stack: server-rendered React/Redux app and
+                                    GraphQL server to interface with various REST APIs
+                                </li>
+                                <li>
+                                    Created GraphQL pagination system using
+                                    connection pattern
+                                </li>
+                                <li>
+                                    Created table component that interfaces with
+                                    the pagination system
+                                </li>
+                                <li>
+                                    Created site's toast notification system with
+                                    Redux
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Fullstack Software Engineer, Flywheel</h3>
+                            <p>Addison, Texas</p>
+                            <p><i>February 2018 - August 2018</i></p>
+                            <ul>
+                                <li>
+                                    Worked with a team to move software platform
+                                    away from legacy Meteor.js code base and
+                                    towards microservices, GraphQL, and React
+                                    Native
+                                </li>
+                                <li>
+                                    Created and optimized features in React Native
+                                    app, GraphQL, microservices, MongoDB,
+                                    and legacy code base
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Software Engineer Intern, Ulyngo</h3>
+                            <p>San Francisco, California</p>
+                            <p><i>July 2016 - December 2017</i></p>
+                            <ul>
+                                <li>
+                                    Ulyngo is an eCommerce company for used goods
+                                    markets near colleges
+                                </li>
+                                <li>
+                                    Worked on a React-Redux app to replace
+                                    Angular.js interface
+                                </li>
+                                <li>
+                                    Maintained legacy PHP backend and signle
+                                    sign-on services
+                                </li>
+                                <li>
+                                    Worked with a team to build an email
+                                    notification service with Python SendGrid
+                                </li>
+                                <li>Worked with team to create a messaging UI</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
