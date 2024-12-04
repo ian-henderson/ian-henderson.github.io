@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ian Henderson | Frontend Engineer</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="color-scheme" content="light dark">
+		<meta name="theme-color" content="#00b478">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="favicon" rel="icon" type="image/png" href="./assets/favicon-light.png">
+
+		<!-- modern-normalize css -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+		<!-- pico css -->
+		<link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css" rel="stylesheet">
+
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+		<!-- plausible -->
+		<script defer data-domain="ianhenderson.info" src="https://plausible.io/js/script.js"></script>
+
+		<style>
+:root {
+	--pico-font-family: "Roboto Flex", var(--pico-font-family-sans-serif);
+	--pico-font-family-monospace: "Roboto Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--pico-font-family-emoji);
+}
+
+      body {
+	      align-items: center;
+	      display: flex;
+	      flex-direction: column;
+	      font-family: var(--pico-font-family);
+	      font-smooth: always;
+	      text-rendering: optimizeLegibility;
+      }
+
+      h2, h3, h4, h5, h6 {
+	      font-family: var(--pico-font-family-monospace);
+      }
+
+      article.page {
+	      display: flex;
+	      flex-direction: column;
+	      margin-bottom: 0;
+	      max-width: 1200px;
+	      padding: 1rem;
+      }
+
+      .side-bar ul {
+	      padding: 0;
+      }
+
+      .side-bar li {
+	      list-style-type: none;
+      }
+
+      main {
+	      display: flex;
+	      flex-direction: column-reverse;
+	      padding: 1rem;
+      }
+
+      .content {
+	      display: flex;
+	      flex: 1;
+	      flex-direction: column-reverse;
+      }
+
+      header {
+	      display: flex;
+	      flex-direction: column;
+	      padding-left: 2rem !important;
+	      padding-right: 2rem !important;
+	      text-align: center;
+      }
+
+      #header-divider {
+	      display: none;
+      }
+
+      h1 {
+	      padding-top: 1rem;
+      }
+
+      #software-engineer {
+	      color: var(--pico-secondary);
+	      font-family: var(--pico-font-family-monospace);
+      }
+
+      @media print {
+	      body {
+		      padding: 0;
+	      }
+
+	      article.page {
+		      border: none;
+		      max-width: inherit;
+		      width: 100%;
+	      }
+
+	      main {
+		      flex-direction: row;
+	      }
+
+	      .side-bar {
+		      padding-right: 3.5rem;
+		      width: 290px;
+	      }
+
+	      #header-divider {
+		      display: inherit;
+	      }
+
+	      section {
+		      padding: 0;
+	      }
+
+	      .hide-for-print {
+		      display: none;
+	      }
+      }
+
+      /* Extra small devices (phones, 600px and down) */
+      @media only screen and (max-width: 600px) {}
+
+      /* Small devices (portrait tablets and large phones, 600px and up) */
+      @media only screen and (min-width: 600px) {}
+
+      /* Medium devices (landscape tablets, 768px and up) */
+      @media only screen and (min-width: 768px) {
+	      .mobile-only {
+		      display: none;
+	      }
+
+	      #header-divider {
+		      display: inherit;
+	      }
+      }
+
+      /* Large devices (laptops/desktops, 992px and up) */
+      @media only screen and (min-width: 992px) {
+	      main {
+		      flex-direction: row;
+	      }
+
+	      .side-bar {
+		      padding-right: 2rem;
+		      width: 345px;
+	      }
+      }
+
+      /* Extra large devices (large laptops and desktops, 1200px and up) */
+      @media only screen and (min-width: 1200px) {
+	      body {
+		      padding: 2rem 0 5rem;
+	      }
+
+	      article.page {
+		      margin-bottom: var(--pico-block-spacing-vertical);
+	      }
+      }
+
+      /* Extra extra large devices */
+      @media only screen and (min-width: 1450px) {
+	      #view-in-pdf-link {
+		      position: fixed;
+		      top: 0;
+		      right: 0;
+		      padding: 1rem;
+	      }
+      }
+
+      @media print {
+	      .mobile-only {
+		      display: none;
+	      }
+      }
+		</style>
+		<script>
+			function handleThemeChange(event) {
+				const faviconLink = document.getElementById("favicon");
+
+				faviconLink.href = event.matches 
+					? "./assets/favicon-dark.png" 
+					: "./assets/favicon-light.png";
+
+				const styles = getComputedStyle(document.documentElement);
+				const themeColorMetaTag = document.querySelector("meta[name='theme-color']");
+				const picoPrimary = styles.getPropertyValue("--pico-primary");
+				themeColorMetaTag.setAttribute("content", picoPrimary);
+			}
+
+			function hidePhoneNumber() {
+				const phoneLi = document.getElementById('phone');
+				phoneLi.innerHTML = 
+					`📱 Hidden, <a href="./assets/resume.pdf" target="_blank">view in PDF ▸</a>`;
+			}
+
+			function showPhoneNumber() {
+				const phoneWithDashes = atob("NDY5LTc2OS05MzQ5Cg==");
+				const phoneWithoutDashes = atob("NDY5NzY5OTM0OQo=");
+				const phoneLi = document.getElementById("phone");
+				phoneLi.innerHTML = 
+					`📱 <a href="tel:${phoneWithoutDashes}">${phoneWithDashes}</a>`;
+			}
+
+			function showEmail() {
+				const email = atob("aWFuaGVuZGVyc29uQHBtLm1lCg==");
+				const emailLi = document.getElementById("email");
+				emailLi.innerHTML = `✉️  <a href="mailto:${email}?subject=Job Opportunity">${email}</a>`;
+			}
+
+			window.onload = function onload() {
+				// color scheme
+				const colorSchemeChangeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+				colorSchemeChangeQuery.addListener(handleThemeChange);
+				handleThemeChange(colorSchemeChangeQuery);
+
+				// email
+				showEmail();
+
+				// phone
+				window.addEventListener('beforeprint', showPhoneNumber);
+				window.addEventListener('afterprint', hidePhoneNumber);
+				hidePhoneNumber();
+			}
+		</script>
+	</head>
+	<body>
+		<article class="page">
+			<header>
+				<h1><strong>Ian Henderson</strong><span id="software-engineer"><br class="mobile-only"><span id="header-divider">|</span>Frontend Engineer</span></h1>
+				<p id="view-in-pdf-link" class="hide-for-print"><a href="./assets/resume.pdf" target= "_blank">View as PDF ▸</a></p>
+			</header>
+			<main>
+				<div class="side-bar">
+					<hr class="mobile-only">
+					<section>
+						<h4>Career Objective</h4>
+						<p>I have eight years of software engineering experience and a bachelor's in Computer Science. I'm passionate about frontend development, user experience, accessibility, and I excel at collaborating with designers to build scalable architectures!</p>
+					</section>
+					<hr>
+					<section>
+						<h4>Skills</h4>
+
+						<h6>Programming Languages & Technologies</h6>
+						<p>AWS, JavaScript/TypeScript, Python, Bash, Linux</p>
+
+						<h6>Frontend</h6>
+						<p>React, Redux, React Native, Expo, Next.js, Webpack, Vite, HTML5, CSS3, Sass, Tailwind, Accessibility (WCAG)</p>
+
+						<h6>Backend</h6>
+						<p>Docker, Node, Express, SQL, NoSQL, GraphQL</p>
+					</section>
+					<hr>
+					<section>
+						<h4>Certifications</h4>
+						<ul>
+							<li>
+								<a href="https://www.credly.com/badges/e712abfa-c364-4ffa-b2b2-3dff88a627d7" target="_blank">AWS Developer Associate</a>
+							</li>
+							<li>
+								<a href="https://www.credly.com/badges/991c5f1c-6556-43b2-a48b-5767d0434495" target="_blank">AWS Cloud Practitioner</a>
+							</li>
+						</ul>
+					</section>
+					<hr>
+					<section>
+						<h4>Education</h4>
+						<h6>University of North Texas</h6>
+						<ul>
+							<li>Computer Science Bachelor's</li>
+							<li>Mathematics Minor</li>
+						</ul>
+					</section>
+					<hr>
+					<section>
+						<h4>Contact</h4>
+						<ul>
+							<li id="phone">📱 Hidden, view in <a href="./assets/resume.pdf" target="_blank">PDF</a></li>
+							<li id="email">✉️ <a href="mailto:ianhenderson@pm.me?subject=Job%20Opportunity">ianhenderson@pm.me</a></li>
+							<li>💻 <a href="https://github.com/ian-henderson" target="_blank">github.com/ian-henderson</a></li>
+							<li>📍 Colorado Springs, CO</li>
+						</ul>
+					</section>
+				</div>
+
+				<div class="content">
+					<section>
+						<h2>Experience</h2>
+
+						<h3>Experis Consultants, Frontend Engineer</h3>
+						<p><i>Remote | February 2023 - July 2024</i></p>
+
+						<h5>Healthwise/WebMD Contract</h5>
+						<ul>
+							<li>Stack: React, TypeScript, Tailwind, Vite, Lit</li>
+							<li>Developed a "Universal Content Presentation" Lit web component that renders Healthwise content and was embedded in various internal and client-owned applications</li>
+							<li>Developed a client-facing content app for Healthwise's health content</li>
+							<li>Ensured applications met WCAG accessibility specifications</li>
+							<li>Developed features for and maintained another application that controlled publishing articles</li>
+							<li>Mentored junior engineers</li>
+						</ul>
+
+						<h3>Signature Consultants, Frontend Engineer</h3>
+						<p><i>Remote | September 2021 - October 2022</i></p>
+
+						<h5>Freespoke Contract</h5>
+						<ul>
+							<li>Stack: React, TypeScript, SCSS/Sass, Netlify, Node</li>
+							<li>Developed UI elements for search application including menu and search results layout</li>
+							<li>Integrated analytics service with search application</li>
+							<li>Developed legal document pages</li>
+						</ul>
+
+						<h5>Optum Contract</h5>
+						<ul>
+							<li>Stack: React, TypeScript, SCSS/Sass, Next.js, Node</li>
+							<li>Maintained legacy Next.js application</li>
+							<li>Developed React wrapper for hosting an external JavaScript app</li>
+							<li>Mentored junior engineers</li>
+						</ul>
+
+						<h5>Bank of America Contract</h5>
+						<ul>
+							<li>Stack: React, TypeScript, SCSS/Sass, Node</li>
+							<li>Developed 3CS, a downtime notification tool</li>
+							<li>Developed DeltaApp, a React app for tracking internal applications</li>
+						</ul>
+
+						<h3>Personal Leave</h3>
+						<p><i>September 2020 - September 2021</i></p>
+						<p>Took a health-related leave, during which I maintained relevant skills and remained committed to professional development.</p>
+
+						<h3>SAVI Controls, Frontend Engineer</h3>
+						<p><i>Carrollton, Texas | May 2019 - September 2020</i></p>
+						<ul>
+							<li>Stack: Meteor.js React, React Native, Expo, TypeScript, SCSS/Sass, Node</li>
+							<li>Developed a React inventory management application</li>
+							<li>Developed React Native companion application for inventory management application that had bulk product importing and a QR product scanner</li>
+							<li>Hosted React Native application on Expo</li>
+							<li>Developed React application for a network-based game console streaming system for GameStop</li>
+						</ul>
+
+						<h3>TEKsystems, Frontend Engineer</h3>
+						<p><i>Addison, Texas | September 2018 - May 2019</i></p>
+						<h5>IBM Contract</h5>
+						<ul>
+							<li>Stack: React, TypeScript, SCSS/Sass, Node, GraphQL</li>
+							<li>Developed a website that manages SoftLayer's bare-metal and virtual servers</li>
+							<li>Developed paginated GraphQL service and table component system for servers</li>
+							<li>Developed a toast notification system</li>
+						</ul>
+
+						<h3>Flywheel, Junior Software Engineer</h3>
+						<p><i>Addison, Texas | February 2018 - August 2018</i></p>
+						<ul>
+							<li>Stack: Meteor.js, React, TypeScript, SCSS/Sass, Node, GraphQL</li>
+							<li>Developed features for React Native app, Node, and GraphQL services</li>
+							<li>Migrated legacy Meteor.js codebase to Node microservices, GraphQL, and React Native application</li>
+						</ul>
+
+						<h3>Ulyngo, Software Engineer Intern</h3>
+						<p><i>San Francisco, California | July 2016 - December 2017</i></p>
+						<ul>
+							<li>Stack: React, Angular.js, CSS, PHP, Laravel</li>
+							<li>Created new React interface in place of legacy Angular.js  interface for legacy ecommerce site</li>
+							<li>Created email notification service with Sendgrid</li>
+						</ul>
+					</section>
+				</div>
+			</main>
+		</article>
+	</body>
+</html>
