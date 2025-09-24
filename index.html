@@ -92,6 +92,11 @@
 			font-family: var(--pico-font-family-monospace);
 		}
 
+		#summary {
+			max-width: 28.75rem;
+			align-self: center;
+		}
+
 		@media print {
 			body {
 				padding: 0;
@@ -114,6 +119,10 @@
 
 			#header-divider {
 				display: inherit;
+			}
+
+			#summary {
+				max-width: inherit;
 			}
 
 			section {
@@ -241,6 +250,13 @@
 					<br class="mobile-only">
 					<span id="header-divider">|</span>Front-End Engineer</span>
 			</h1>
+
+			<p id="summary">
+				I'm passionate and detail-oriented frontend engineer with nine years of experience building scalable,
+				accessible web applications. I excel at collaborating with designers to create intuitive user
+				experiences that meet a high standard of quality and performance.
+			</p>
+
 			<p id="view-in-pdf-link" class="hide-for-print">
 				<a href="./assets/resume.pdf" target="_blank">
 					View as PDF ▸
